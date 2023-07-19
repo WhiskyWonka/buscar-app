@@ -10,31 +10,26 @@
 
 Clone the repository
 
-    git clone http://trady-nnluzd@git.codesubmit.io/trady/buscar-app
+    git clone https://github.com/WhiskyWonka/buscar-app.git
 
 Switch to the repo folder
 
-    cd buscar-app/financial-ch
+    cd buscar-app
 
-Run container (You must have docker desktop installed)
+pre-requisites: docker desktop
 
-    docker compose up -d
+Execute the docker command for executing Laravel sail
 
-Install dependencies
-
-example:
-
-    docker exec financial-ch-laravel.test-1 composer install
-
-**_Note_** : where _buscar-app.test-1_ is the application container-name
-
-Stop the container
-
-    docker compose stop
+    docker run --rm \
+        -u "$(id -u):$(id -g)" \
+        -v $(pwd):/var/www/html \
+        -w /var/www/html \
+        laravelsail/php81-composer:latest \
+        composer install --ignore-platform-reqs
 
 Run the container with sail
 
-    vendor/bin/sail up -d
+    ./vendor/bin/sail up -d
 
 Create database
 

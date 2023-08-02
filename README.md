@@ -35,20 +35,19 @@ Create database
 
     touch database/database.sqlite
 
+Create env file
+
+    cp .env.example .env
+
 Configure application (.env)
 
 ```ini
 ...
 DB_CONNECTION=sqlite
-
 # DB_HOST=mysql
-
 # DB_PORT=3306
-
 # DB_DATABASE=testing
-
 # DB_USERNAME=sail
-
 # DB_PASSWORD=password
 ...
 ```
@@ -70,6 +69,13 @@ Run seeders
     sail artisan db:seed
 
 ---
+### Install node modules
+    npm install --devop´
+
+### Activate Husky Hooks
+    npx husky install
+    
+
 
 API documentation
 

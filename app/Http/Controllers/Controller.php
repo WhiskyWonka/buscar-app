@@ -9,11 +9,9 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
 /**
-este lo voy a comentar bien
-mal
-porque quiero
-que lo arregle
-php cs fixer
+         *este lo voy a comentar bien
+*mal
+   *porque quiero
  */
 class Controller extends BaseController
 {

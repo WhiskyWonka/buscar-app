@@ -4,7 +4,8 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "pre-commit": "lint-staged"
+        "pre-commit": "lint-staged",
+        "pre-push": "php artisan test"
     },
     "devDependencies": {
         "@commitlint/cli": "^17.6.7",

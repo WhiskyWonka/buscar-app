@@ -9,12 +9,17 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
 /**
-         *este lo voy a comentar bien
-*mal
-   *porque quiero
+ * este lo voy a comentar mal
+ * asi lo arregla
+ * php-cs-fixer
  */
 class Controller extends BaseController
 {
     use AuthorizesRequests;
     use ValidatesRequests;
+
+    public function Prueba(): void
+    {
+        $foo ??= 1;
+    }
 }

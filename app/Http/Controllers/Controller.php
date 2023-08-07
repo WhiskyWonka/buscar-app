@@ -18,8 +18,9 @@ class Controller extends BaseController
     use AuthorizesRequests;
     use ValidatesRequests;
 
-    public function Prueba(): void
+    public function Prueba(): int
     {
         $foo ??= 1;
+        return $foo;
     }
 }

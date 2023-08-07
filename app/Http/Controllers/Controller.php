@@ -21,5 +21,6 @@ class Controller extends BaseController
     public function Prueba(): int
     {
         $foo ??= 1;
+        return $foo;
     }
 }

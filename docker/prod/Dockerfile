@@ -31,5 +31,3 @@ RUN php artisan view:clear
 RUN php artisan config:clear
 
 EXPOSE 8000
-
-EXPOSE 80

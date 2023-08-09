@@ -13,7 +13,7 @@ ARG uid
 
 # RUN docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd
 
-WORKDIR /var/www
+WORKDIR /var/www/html
 
 USER $user
 

@@ -2,8 +2,8 @@ FROM php:8.2-fpm
 
 LABEL maintainer="Richard Grinberg"
 
-ARG user
-ARG uid
+#ARG user
+#ARG uid
 
 # RUN apt-get update \
 #   && apt-get install -y git curl libpq-dev libpng-dev libonig-dev libxml2-dev zip unzip \
@@ -15,7 +15,7 @@ ARG uid
 
 WORKDIR /var/www/html
 
-USER $user
+#USER $user
 
 COPY ./public .
 
@@ -32,4 +32,4 @@ COPY ./public .
 # RUN php artisan view:clear
 # RUN php artisan config:clear
 
-EXPOSE 8000
+# EXPOSE 8000

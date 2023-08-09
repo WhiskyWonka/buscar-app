@@ -32,5 +32,5 @@ COPY ./public .
 # RUN php artisan view:clear
 # RUN php artisan config:clear
 
-EXPOSE 80
+EXPOSE 9000
 CMD ["php-fpm"]

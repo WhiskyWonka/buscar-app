@@ -33,3 +33,4 @@ COPY ./public .
 # RUN php artisan config:clear
 
 EXPOSE 80
+CMD ["php-fpm"]

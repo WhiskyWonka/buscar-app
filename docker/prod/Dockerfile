@@ -39,5 +39,7 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 # Copy existing application directory contents
 COPY . .
 
+COPY docker/prod/000-default.conf /etc/apache2/sites-available/.
+
 # Copy existing application directory permissions
 COPY --chown=www:www . /var/www/html

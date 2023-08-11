@@ -40,7 +40,7 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 COPY . .
 
 # Run composer
-RUN composer install
+RUN composer install --no-dev --optimize-autoloade
 
 RUN mkdir -p ./storage/logs
 RUN php artisan cache:clear

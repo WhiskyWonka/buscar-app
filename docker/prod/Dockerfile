@@ -46,9 +46,10 @@ RUN mkdir -p ./storage/logs
 RUN php artisan cache:clear
 RUN php artisan view:clear
 RUN php artisan config:clear
+RUN php artisan key:generate
 
 # Set virtualhost
 COPY docker/prod/000-default.conf /etc/apache2/sites-available/.
 
 # Copy existing application directory permissions
-COPY --chown=www:www . /var/www/html
+# COPY --chown=www:www . /var/www/html

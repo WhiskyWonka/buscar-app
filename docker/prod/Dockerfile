@@ -1,8 +1,6 @@
 FROM php:8.2-apache
 
 RUN a2enmod rewrite
-# Copy composer.lock and composer.json
-COPY composer.lock composer.json /var/www/
 
 # Set working directory
 WORKDIR /var/www/html
@@ -31,7 +29,9 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
+# Copy composer.lock and composer.json
+COPY composer.lock composer.json /var/www/html
+# Run composer
 RUN composer install
 
 COPY .env.production .env

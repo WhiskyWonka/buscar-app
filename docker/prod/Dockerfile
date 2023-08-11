@@ -52,4 +52,4 @@ RUN php artisan key:generate
 COPY docker/prod/000-default.conf /etc/apache2/sites-available/.
 
 # Copy existing application directory permissions
-# COPY --chown=www:www . /var/www/html
+RUN chown -R www-data:www-data /var/www/html

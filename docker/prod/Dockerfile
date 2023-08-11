@@ -37,9 +37,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY .env.production .env
 
 RUN mkdir -p /app/storage/logs
-RUN php artisan cache:clear
-RUN php artisan view:clear
-RUN php artisan config:clear
+# RUN php artisan cache:clear
+# RUN php artisan view:clear
+# RUN php artisan config:clear
 
 # Add user for laravel application
 RUN groupadd -g 1000 www

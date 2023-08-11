@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -y \
   vim \
   unzip \
   git \
-  curl
+  curl \
+  libapache2-mod-php8.x
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*

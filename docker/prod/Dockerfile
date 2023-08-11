@@ -32,11 +32,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 COPY .env.production .env
 
-RUN mkdir -p ./storage/logs
-# RUN php artisan cache:clear
-# RUN php artisan view:clear
-# RUN php artisan config:clear
-
 # Add user for laravel application
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
@@ -47,6 +42,12 @@ COPY . .
 # Run composer
 RUN composer install
 
+RUN mkdir -p ./storage/logs
+RUN php artisan cache:clear
+RUN php artisan view:clear
+RUN php artisan config:clear
+
+# Set virtualhost
 COPY docker/prod/000-default.conf /etc/apache2/sites-available/.
 
 # Copy existing application directory permissions

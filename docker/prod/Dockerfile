@@ -29,11 +29,6 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-# Copy composer.lock and composer.json
-COPY composer.lock /var/www/html
-COPY composer.json /var/www/html
-# Run composer
-RUN composer install
 
 COPY .env.production .env
 
@@ -48,6 +43,9 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
 COPY . .
+
+# Run composer
+RUN composer install
 
 COPY docker/prod/000-default.conf /etc/apache2/sites-available/.
 
